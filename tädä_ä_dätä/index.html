@@ -2,14 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
     <!-- You can write your website's name here -->
-    <title>BasementMonster</title> 
+    <title>RecklessCodingTryout</title> 
 </head>
 <body>
-    <div style="width: 100vw;height: 100vh; background-color: aquamarine;"></div>
-    <p></p>
+<!-- 
+                                          Level 1: practice to position <div>s
+
+Crucial TAGs in level 1:
+<div></div>  - a container. (and a very good dog name i think.)
+
+Crucial Properties in level 1:
+width  - is the width of element
+height - is the height of the element
+top    - the distance of the element from the top-edge of the page
+left   - the distance of the element from the left-edge of the page
+background-color - the color of the containter element (in this case the <div>)  
+-->
+    
+    <div style="width: 25vw;height: 50vh; background-color: blue;"></div>
+    <div style="width: 25vw;height: 25vh; top: 50vh;background-color: white;"></div>
+    <div style="width: 25vw;height: 12.5vh; top: 75vh;background-color: yellow;"></div>
+    <div style="width: 25vw;height: 12.5vh; top:87.5vh;background-color: red;"></div>
+    <div style="width: 25vw;height: 100vh; left:25vw;background-color: black;"></div>
+    <div style="width: 12.5vw;height: 50vh; left:50vw;background-color: white;"></div>
+    <div style="width: 25vw;height: 50vh; left:50vw; top:50vh;background-color: yellow;"></div>
+    <div style="width: 37.5vw;height: 37.5vh; left:62.5vw; background-color: red;"></div>
+
+
+
+
+
+
+
+
+
+<!--                               Level 2: Learn how to put contents in the container.
+                              learning file paths(directory) and sizeing for texts and images. 
+
+Crucial TAGs in level 2:
+<img src="thefilename.jpg" style="width: 100px; height:auto;"></img> - for placing images. Acceptable format for images are '.jpg', '.png', and '.svg'.
+
+Crucial Properties in level 2:
+font-size  - is the size of the text
+color      - is the color of the text
+width      - if put in the styling for <img> tag, it is changing the size of the image, not the container
+z-index    - the order of layers, the bigger the numbers, the fronter the elements
+-->
+
+
+<!-- <img style="width:500px; height:auto;" src="data/images/Cats/cat8.jpg">
+<div style="font-size: 10rem; color:coral">Give me kibbles.</div> -->
+
+
+
+
+
+
+
+
+<!--                                   Level 3: Overflow~~
+
+Crucial Properties in level 3:
+overflow   - controls what happens to content that is too big to fit into a container
+overflow-x and overflow-y  - Determine whether to control content overflow horizontally, vertically, or in both directions.
+
+
+overflow: visible   - contents outside of the container box are visible
+overflow: hidden    - contents outside of the container box are hidden
+overflow: scroll    - contents outside of the container box can be scroll to see. 
+overflow: auto      - Similar to scroll, but it adds scrollbars only when necessary
+-->
+
+<!-- <div style="width: 25vw;height: 50vh;"><img style="width:800px;" src="data/images/Cats/cat25.jpg"></div>
+<div style="overflow-y:hidden; overflow-x:scroll; width: 25vw;height: 50vh;left:25vw; " ><img src="data/images/Cats/cat4.jpg"></div>
+<div style="overflow-y:scroll; overflow-x:hidden; width: 25vw;height: 50vh; left:70vw;" ><img style="width:400px;" src="data/images/Cats/cat7.jpg"></div>
+<div style="overflow:scroll; width: 35vw;height: 50vh;left:50vw; font-size: 20rem; z-index:1;" >I AM A GIGANTIC TEXT</div> -->
 </body>
 </html>

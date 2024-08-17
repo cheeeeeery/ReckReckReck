@@ -2,3 +2,12 @@ body{
     margin:0px;
     padding: 0px;
 }
+
+html{
+    font-family: sans-serif;
+}
+div {
+    position:absolute;
+    overflow:scroll;
+}
+
