@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content ="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 
     <!-- You can write your website's name here -->
     <title>RecklessCodingTryout</title> 
@@ -23,14 +23,21 @@ left   - the distance of the element from the left-edge of the page
 background-color - the color of the containter element (in this case the <div>)  
 -->
     
-    <div style="width: 25vw;height: 50vh; background-color: blue;"></div>
-    <div style="width: 25vw;height: 25vh; top: 50vh;background-color: white;"></div>
+    <div style="width: 37.5vw;height: 25vh; top:0; left:0; background-color: yellow;"><img style="width:500px; height:auto; z-index: 5000;" src="data\images\Cats\cat1.jpg"></div>
+   <!-- <div style="width: 25vw;height: 25vh; top: 50vh;background-color: white;"></div>
     <div style="width: 25vw;height: 12.5vh; top: 75vh;background-color: yellow;"></div>
-    <div style="width: 25vw;height: 12.5vh; top:87.5vh;background-color: red;"></div>
-    <div style="width: 25vw;height: 100vh; left:25vw;background-color: black;"></div>
-    <div style="width: 12.5vw;height: 50vh; left:50vw;background-color: white;"></div>
-    <div style="width: 25vw;height: 50vh; left:50vw; top:50vh;background-color: yellow;"></div>
-    <div style="width: 37.5vw;height: 37.5vh; left:62.5vw; background-color: red;"></div>
+    <div style="width: 25vw;height: 12.5vh; top:87.5vh;background-color: red;"></div>-->
+    <div class="scroll-div" style="width: 62.5vw;height: 25vh; left: 37.5vw;background-color:rgb(0, 68, 255) ;"></div>
+    <div class="scroll-div" style="overflow-x:hidden; width: 12.5vw;height: 25vh; left:0; top:25vh;background-color: yellow;"><img src="data\images\Cats\cat2.jpg"></div>
+    <div class="scroll-div" style="overflow:scroll; width: 12.5vw;height: 25vh; left:12.5vw; top:25vh;background-color: rgb(0, 68, 255);"></div>
+    <div class="scroll-div" style="overflow:scroll;width: 75vw;height: 25vh; left:25vw; top:25vh;background-color: yellow;"><img src="data\images\Cats\cat3.jpg"></div>
+    <div class="scroll-div" style="width: 37.5vw;height: 25vh; top:50vh; left:0; background-color: yellow;"><img src="data\images\Cats\cat6.jpg"></div>
+    <div class="scroll-div" style="width: 25vw;height: 25vh; top: 50vh; left: 37.5vw;background-color: rgb(0, 68, 255);font-size:10rem;">Home</div>
+    <div class="scroll-div" style="width: 12.5vw;height: 25vh; top: 50vh; left: 62.5vw;background-color: yellow;"><img src="data\images\Cats\cat9.jpg"></div>
+    <div class="scroll-div" style="overflow: scroll; width: 12.5vw;height: 25vh; top: 50vh; left: 75vw;background-color: rgb(0, 68, 255);"></div>
+    <div class="scroll-div" style="width: 12.5vw;height: 25vh; top: 50vh; right: 0vw;background-color: yellow;"><img src="data\images\Cats\cat13.jpg"></div>
+    <div class="scroll-div" style="overflow:scroll; width: 100vw;height: 25vh; bottom: 0vh; right: 0vw;background-color: rgb(0, 68, 255);"></div>
+    <!--<div style="width: 37.5vw;height: 37.5vh; left:62.5vw; background-color: red;"></div>-->
 
 
 
@@ -54,8 +61,8 @@ z-index    - the order of layers, the bigger the numbers, the fronter the elemen
 -->
 
 
-<!-- <img style="width:500px; height:auto;" src="data/images/Cats/cat8.jpg">
-<div style="font-size: 10rem; color:coral">Give me kibbles.</div> -->
+<img style="width:500px; height:auto; z-index: 5000;"" src="data\images\Cats\cat8.jpg>">
+<div style="font-size:10rem; bottom:0vh; color: white;">Give me the Key.</div>
 
 
 
@@ -81,5 +88,33 @@ overflow: auto      - Similar to scroll, but it adds scrollbars only when necess
 <div style="overflow-y:hidden; overflow-x:scroll; width: 25vw;height: 50vh;left:25vw; " ><img src="data/images/Cats/cat4.jpg"></div>
 <div style="overflow-y:scroll; overflow-x:hidden; width: 25vw;height: 50vh; left:70vw;" ><img style="width:400px;" src="data/images/Cats/cat7.jpg"></div>
 <div style="overflow:scroll; width: 35vw;height: 50vh;left:50vw; font-size: 20rem; z-index:1;" >I AM A GIGANTIC TEXT</div> -->
+
+<script>
+    // Select all div elements in the body
+    const divs = document.querySelectorAll('body > div');
+
+    // Flag to prevent recursive scroll events
+    let isSyncingScroll = false;
+
+    divs.forEach(div => {
+      div.addEventListener('scroll', () => {
+        if (isSyncingScroll) return; // Prevent recursive calls
+
+        isSyncingScroll = true; // Set flag to indicate syncing in progress
+
+        const scrollTop = div.scrollTop;
+        const scrollLeft = div.scrollLeft;
+
+        divs.forEach(otherDiv => {
+          if (otherDiv !== div) {
+            otherDiv.scrollTop = scrollTop;
+            otherDiv.scrollLeft = scrollLeft;
+          }
+        });
+
+        isSyncingScroll = false; // Reset flag after syncing
+      });
+    });
+</script> 
 </body>
 </html>

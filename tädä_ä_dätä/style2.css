@@ -1,0 +1,20 @@
+body{
+    margin:0px;
+    padding: 0px;
+
+}
+body::-webkit-scrollbar-track{
+    background: green;
+    border-radius: 20px;
+}
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+html{
+    font-family: sans-serif;
+}
+div {
+    position:absolute;
+    
+}
